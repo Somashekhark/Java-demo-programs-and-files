@@ -1,4 +1,3 @@
-package net.cracker;
 import java.util.Scanner;
 
 public class AddString {
