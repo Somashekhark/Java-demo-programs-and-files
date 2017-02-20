@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Node{
+	int info;
+	struct Node *next;
+};
+  void display(struct Node *node)
+   {
+   	   while(node!=NULL){
+   	   	printf("%d ->",node->info);
+   	   	node=node->next;
+		  }
+	printf("end of the linked list");	  
+   }
+
+ struct node* insertlast(struct Node** head){
+	    int a;
+	    struct Node * newnode=NULL;
+		newnode=(struct Node*)malloc(sizeof(struct Node*));
+		struct Node *current=*head;
+		
+		printf("enter the integer value to insert int the linked list");
+	    scanf("%d",&a);
+	    newnode->info=a;
+	    newnode->next=NULL;
+	    
+	    if(current==NULL){
+	    	*head=newnode;
+		}
+		else {
+		
+	      while(current->next!=NULL){
+	        	current=current->next;
+		   }
+		   current->next=newnode;
+           }
+	    
+	}
+
+
+void main()
+{
+	struct Node* first=NULL;
+	struct Node* second=NULL;
+	struct Node* third=NULL;
+	first=(struct Node*) malloc(sizeof(struct Node));
+    second=(struct Node*) malloc(sizeof(struct Node));
+    third=(struct Node*) malloc(sizeof(struct Node));
+	
+	first->info=1;
+	first->next=second;
+	
+    second->info=2;
+	second->next=third;
+ 	
+    third->info=3;
+    third->next=NULL;
+    display(first);
+    int a=1;
+    while(a==1){
+    	insertlast(&first);
+         display(first);
+	}
+	
+    
+    
+}
