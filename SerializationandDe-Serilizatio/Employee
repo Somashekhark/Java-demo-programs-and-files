@@ -1,0 +1,17 @@
+package Demo;
+
+class Employee implements java.io.Serializable{
+	public int id;
+    public String name;
+    public String Address;
+    Employee(int id,String name,String Address){
+    	this.id=id;
+    	this.name=name;
+    	this.Address=Address;
+    	
+    }
+  public String toString(){
+	   return "Employee Object id="+id+" name "+name+" Address "+Address;
+   }
+  
+}
