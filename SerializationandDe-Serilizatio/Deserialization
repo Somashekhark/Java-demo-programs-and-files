@@ -1,0 +1,28 @@
+package Demo;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
+public class Deserialization {
+
+	public static void main(String args[]) {
+		
+		Employee e=null;
+		try{
+			FileInputStream fin=new FileInputStream("C:/Users/mypc/Desktop/emp1.ser");
+		
+		
+			ObjectInputStream inobj=new ObjectInputStream(fin);
+			 e=(Employee) inobj.readObject();
+			 fin.close();
+			 inobj.close();
+			System.out.println(e.toString());
+		}
+		catch(ClassNotFoundException ex){
+			System.out.println("class not found Exception");
+		}catch(Exception ex){
+			System.out.println("Exception");
+		}
+	}	
+}
