@@ -1,0 +1,9 @@
+To read 
+FileInputStream fin=new FileInputStream("C:/Users/mypc/Desktop/emp1.ser");
+ObjectInputStream inobj=new ObjectInputStream(fin);
+e=(Employee) inobj.readObject();
+
+To write
+FileOutputStream fileout=new FileOutputStream("C:/Users/mypc/Desktop/emp1.ser");
+ObjectOutputStream out=new ObjectOutputStream(fileout);
+out.writeObject(e);
