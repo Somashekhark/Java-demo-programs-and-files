@@ -1,0 +1,27 @@
+package Demo;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class Serialization {
+
+	public static void main(String args[]){
+		Employee e=new Employee(1,"abcd","some address");
+		
+		try{
+			FileOutputStream fileout=new FileOutputStream("C:/Users/mypc/Desktop/emp1.ser");
+			ObjectOutputStream out=new ObjectOutputStream(fileout);
+			
+			out.writeObject(e);
+			
+	        out.close();
+	        fileout.close();
+	        
+		}catch(IOException e1){
+			System.out.println(e1);
+		}
+	}
+	
+}
